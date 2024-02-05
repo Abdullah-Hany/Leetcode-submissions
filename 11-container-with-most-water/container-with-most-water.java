@@ -5,8 +5,11 @@ class Solution {
         int left = arr.length-1;
         
         while(right != left){
-             maxArea = Math.max(maxArea, Math.min(arr[right],arr[left])*(left-right));
-             if (arr[right] < arr[left]){
+            int leftValue = arr[left];
+            int rightValue = arr[right];
+
+             maxArea = Math.max(maxArea, Math.min(rightValue,leftValue)*(left-right));
+             if (rightValue < leftValue){
                  right++;
              }
              else{
