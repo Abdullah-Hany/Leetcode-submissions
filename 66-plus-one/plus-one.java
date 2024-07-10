@@ -22,8 +22,10 @@ class Solution {
             }
         }
         if (hasCarry) {
-            return IntStream.concat(IntStream.of(1), Arrays.stream(digits))
-                    .toArray();
+            int [] newArr = new int[digits.length+1];
+        newArr[0] = 1;
+        System.arraycopy(digits, 0, newArr, 1, digits.length);
+        return newArr;   
         }
         return digits;
 
